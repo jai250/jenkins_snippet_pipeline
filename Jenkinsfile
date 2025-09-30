@@ -13,7 +13,7 @@ pipeline {
         stage('testing build') {
             steps {
                 sh '''
-                   ls-lrt
+                   ls -lrt
                    pwd
                    echo "testing for git "
                    '''
