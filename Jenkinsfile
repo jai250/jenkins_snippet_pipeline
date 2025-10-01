@@ -1,6 +1,11 @@
 pipeline {
     agent any
 
+    options {
+  timestamps()
+}
+
+
     environment {
         GIT_BRANCH = 'main'
         GIT_CREDS = 'jenkins-github' 
