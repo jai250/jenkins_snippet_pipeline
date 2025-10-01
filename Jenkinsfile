@@ -4,7 +4,7 @@ pipeline {
     environment {
         GIT_BRANCH = 'main'
         GIT_CREDS = 'jenkins-github' 
-        URL = 'https://github.com/jai250/jenkins-pipeline.git'
+        REPO_URL = 'https://github.com/jai250/jenkins-pipeline.git'
         
     }
 
@@ -16,7 +16,7 @@ pipeline {
                 // groovy syntax
                 git branch: "${env.GIT_BRANCH}",
                 credentialsId: "${env.GIT_CREDS}", 
-                url: "${env.URL}"
+                url: "${env.REPO_URL}"
 
             }
         }
