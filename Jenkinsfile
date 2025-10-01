@@ -1,38 +1,34 @@
 pipeline {
     agent any
+
+    environment {
+        GIT_BRANCH: 'main',
+        GIT_CREDS: 'jenkins-github', 
+        URL: 'https://github.com/jai250/jenkins-pipeline.git'
+        
+    }
+
+
+
     stages {
-        stage('checkout-1') {
+        stage('checkout-groovy') {
             steps {
-                git branch: 'main',
-                credentialsId: 'jenkins-github', 
-                url: 'https://github.com/jai250/jenkins-pipeline.git'
+                // groovy syntax
+                git branch: " ${env.GIT_BRANCH}",
+                credentialsId: "${env.GIT_CREDS}", 
+                url: "${env.URL}"
 
             }
         }
-        stage('running parallel') {
-            parallel {
-                stage('testing build') {
-                    steps {
-                        sh '''
-                        ls -lrt
-                        pwd
-                        echo "testing for parallel-1"
-                        sleep 10
-                        '''
-                    }
-                }
 
-                stage('testing build-2') {
-                    steps {
-                        sh '''
-                        echo $USER
-                        pwd
-                        echo "this is parallel-2"
-                        sleep 10
-                        '''
-                    }   
-                }
+        stage('shell syntax') {
+            steps {
+                sh '''
+                   echo $GIT_BRANCH
+                   echo $ GIT_CREDS
+                   '''
+                
             }
-        }        
+        }
     }
 }
