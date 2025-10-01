@@ -14,7 +14,7 @@ pipeline {
         stage('checkout-groovy') {
             steps {
                 // groovy syntax
-                git branch: " ${env.GIT_BRANCH}",
+                git branch: "${env.GIT_BRANCH}",
                 credentialsId: "${env.GIT_CREDS}", 
                 url: "${env.URL}"
 
