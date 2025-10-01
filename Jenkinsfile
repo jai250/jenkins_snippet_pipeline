@@ -15,8 +15,8 @@ pipeline {
                 sh '''
                    ls -lrt
                    pwd
-                   echo "testing for git"
-                   exit 1 
+                   echo "testing for git"`
+                   
                    '''
             }
         }
