@@ -3,8 +3,8 @@ pipeline {
 
     environment {
         GIT_BRANCH = 'main'
-        GIT_CREDS='jenkins-github' 
-        URL='https://github.com/jai250/jenkins-pipeline.git'
+        GIT_CREDS = 'jenkins-github' 
+        URL = 'https://github.com/jai250/jenkins-pipeline.git'
         
     }
 
