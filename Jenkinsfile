@@ -26,7 +26,8 @@ pipeline {
             steps {
                 sh '''
                    echo $GIT_BRANCH
-                   echo $ GIT_CREDS
+                   echo $GIT_CREDS
+                   echo $REPO_URL
                    '''
                 
             }
