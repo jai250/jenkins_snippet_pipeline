@@ -1,22 +1,19 @@
 pipeline {
     agent any
+    
 
-    options {
-  timestamps()
-}
-
-
-    environment {
-        GIT_BRANCH = 'main'
-        GIT_CREDS = 'jenkins-github' 
-        REPO_URL = 'https://github.com/jai250/jenkins-pipeline.git'
-        
-    }
 
 
 
     stages {
         stage('checkout-groovy') {
+            
+            environment {
+                GIT_BRANCH = 'main'
+                GIT_CREDS = 'jenkins-github' 
+                REPO_URL = 'https://github.com/jai250/jenkins-pipeline.git'
+                
+            }
             steps {
                 // groovy syntax
                 git branch: "${env.GIT_BRANCH}",
