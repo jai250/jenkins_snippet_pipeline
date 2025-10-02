@@ -2,9 +2,9 @@ pipeline {
     agent any
 
     parameters {
-  choice choices: ['https://github.com/jai250/jenkins-pipeline.git', 'https://github.com/jai250/jenkins-pipeline_2.git'], description: 'select from 1sdt and 2nd pipiline', name: 'URL'
-  choice choices: ['test ', 'deploy', 'prod'], name: 'environment'
-  string 'pipeline job'
+  choice choices: ['https://github.com/jai250/jenkins-pipeline.git', 'https://github.com/jai250/jenkins-pipeline_2.git'], description: 'select from 1sdt and 2nd pipiline', name: 'REPO_URL'
+  choice choices: ['test ', 'stagging', 'prod'], name: 'environment'
+  string defaultValue: 'main', name: 'GIT_BRANCH'
 }
     
 
