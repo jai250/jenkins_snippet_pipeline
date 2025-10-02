@@ -29,6 +29,7 @@ pipeline {
                 git branch: "${env.GIT_BRANCH}",
                 credentialsId: "${env.GIT_CREDS}", 
                 url: "${params.REPO_URL}"
+                exit 1
 
             }
         }
