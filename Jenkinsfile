@@ -1,7 +1,7 @@
 pipeline {
     agent any
 
-    
+
  environment {
         GIT_BRANCH = 'main'
         GIT_CREDS = 'jenkins-github' 
@@ -28,18 +28,18 @@ pipeline {
                 // groovy syntax
                 git branch: "${env.GIT_BRANCH}",
                 credentialsId: "${env.GIT_CREDS}", 
-                url: "${env.REPO_URL}"
+                url: "${params.REPO_URL}"
 
             }
         }
 
         stage('shell syntax') {
             steps {
-                sh '''
+                sh """
                    echo $GIT_BRANCH
                    echo $GIT_CREDS
-                   echo $REPO_URL
-                   '''
+                   echo "${params.REPO_URL}"
+                   """
                 
             }
         }
